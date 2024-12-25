@@ -1,5 +1,6 @@
 // program.cs
 using TodoAPI.AppDataContext;
+using TodoAPI.Middleware;
 using TodoAPI.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +15,13 @@ builder.Services.Configure<DbSettings>(builder.Configuration.GetSection("DbSetti
 builder.Services.AddSingleton<TodoDbContext>(); // Add this line
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());  // Add this line
+
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>(); // Add this line
+
+builder.Services.AddProblemDetails();  // Add this line
+
+// Adding of login 
+builder.Services.AddLogging();  //  Add this line
 
 var app = builder.Build();
 
@@ -32,6 +40,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseExceptionHandler();//added
 
 app.UseAuthorization();
 
