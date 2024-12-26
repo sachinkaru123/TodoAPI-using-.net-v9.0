@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "e885561f-e2f8-45f0-997d-3bcce5eee4b0",
+		"name": "TodoAppC#",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29627029"
+	},
+	"item": [
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Learn ASP.NET Core\",\r\n    \"description\": \"Learn how to build web applications with ASP.NET Core\",\r\n    \"dueDate\": \"2022-12-31T00:00:00\",\r\n    \"priority\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5023/api/todo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5023",
+					"path": [
+						"api",
+						"todo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "get specific task",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "update task",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5023/api/todo/08dd25bd-608a-40cb-8b84-9daeff34545a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5023",
+					"path": [
+						"api",
+						"todo",
+						"08dd25bd-608a-40cb-8b84-9daeff34545a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Task",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5023/api/todo/08dd25c8-52b0-422e-8ab5-ce231ef91ea5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5023",
+					"path": [
+						"api",
+						"todo",
+						"08dd25c8-52b0-422e-8ab5-ce231ef91ea5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
